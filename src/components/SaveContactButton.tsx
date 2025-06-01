@@ -14,12 +14,16 @@ const SaveContactButton = () => {
       // Construct a data URI with the vCard content
       const encodedVCard = encodeURIComponent(vCardData);
       const dataUri = `data:text/vcard;charset=utf-8,${encodedVCard}`;
+      console.log(dataUri);
 
       // Open the data URI to trigger Android's add contact flow
       window.open(dataUri, '_blank');
       return;
     }
-
+    else {
+      console.log("Not an Android device. Falling back to VCF download");
+    }
+    
     // Fallback: download the .vcf file
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
