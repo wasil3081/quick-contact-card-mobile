@@ -5,24 +5,24 @@ import { MessageCircle, Phone, Mail } from 'lucide-react';
 const ContactActions = () => {
   const actions = [
     {
-      icon: MessageCircle,
-      label: 'message',
-      action: () => window.open('sms:+923458299601', '_self'),
-      color: 'bg-blue-600 hover:bg-blue-500'
+      icon: null,
+      iconImage: '/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png',
+      label: 'WhatsApp',
+      action: () => window.open('https://wa.me/923458299601', '_blank'),
+      color: 'bg-green-600 hover:bg-green-500'
     },
     {
       icon: Phone,
       label: 'call',
       action: () => window.open('tel:+923458299601', '_self'),
-      color: 'bg-green-600 hover:bg-green-500'
+      color: 'bg-blue-600 hover:bg-blue-500'
     },
     {
-      icon: null,
-      iconImage: '/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png',
-      label: 'WhatsApp',
-      action: () => window.open('https://wa.me/923458299601', '_blank'),
+      icon: MessageCircle,
+      label: 'message',
+      action: () => window.open('sms:+923458299601', '_self'),
       color: 'bg-emerald-600 hover:bg-emerald-500'
-    },
+    },  
     {
       icon: Mail,
       label: 'mail',
