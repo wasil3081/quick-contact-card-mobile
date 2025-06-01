@@ -16,13 +16,7 @@ const SaveContactButton = () => {
       const dataUri = `data:text/vcard;charset=utf-8,${encodedVCard}`;
 
       // Open the data URI to trigger Android's add contact flow
-      const link = document.createElement('a');
-      link.href = dataUri;
-      //link.download = 'Wasil_Anwar.vcf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
+      window.open(dataUri, '_blank');
       return;
     }
 
