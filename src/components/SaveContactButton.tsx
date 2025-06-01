@@ -6,7 +6,8 @@ const SaveContactButton = () => {
   const handleSaveContact = async () => {
     const vCardData = generateVCard();
     const blob = new Blob([vCardData], { type: 'text/x-vcard' }); // More compatible MIME type
-    const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/x-vcard' });
+    //const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/x-vcard' });
+    const file = new File([blob], 'test.txt', { type: 'text/plain' });
 
     const isAndroid = /Android/i.test(navigator.userAgent);
 
