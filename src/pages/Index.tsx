@@ -7,7 +7,7 @@ import SaveContactButton from '../components/SaveContactButton';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
       <div className="container mx-auto px-4 py-8 max-w-md">
         <div className="space-y-6">
           <ContactCard />

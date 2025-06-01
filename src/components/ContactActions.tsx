@@ -8,25 +8,25 @@ const ContactActions = () => {
       icon: MessageCircle,
       label: 'message',
       action: () => window.open('sms:+923458299601', '_self'),
-      color: 'bg-blue-500 hover:bg-blue-600'
+      color: 'bg-gray-700 hover:bg-gray-800'
     },
     {
       icon: Phone,
       label: 'call',
       action: () => window.open('tel:+923458299601', '_self'),
-      color: 'bg-green-500 hover:bg-green-600'
+      color: 'bg-gray-600 hover:bg-gray-700'
     },
     {
       icon: Video,
       label: 'video',
       action: () => window.open('facetime:+923458299601', '_self'),
-      color: 'bg-purple-500 hover:bg-purple-600'
+      color: 'bg-gray-800 hover:bg-gray-900'
     },
     {
       icon: Mail,
       label: 'mail',
       action: () => window.open('mailto:wasil1996@gmail.com', '_self'),
-      color: 'bg-red-500 hover:bg-red-600'
+      color: 'bg-gray-500 hover:bg-gray-600'
     }
   ];
 
