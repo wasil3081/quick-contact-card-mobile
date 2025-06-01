@@ -14,7 +14,7 @@ const SaveContactButton = () => {
       // Construct a data URI with the vCard content
       const encodedVCard = encodeURIComponent(vCardData);
       const dataUri = ${encodedVCard};
-      console.log(dataUri);
+      console.log("Data URI: ", $dataUri);
 
       // Open the data URI to trigger Android's add contact flow
       window.open(dataUri, '_blank');
