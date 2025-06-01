@@ -17,8 +17,9 @@ const ContactActions = () => {
       color: 'bg-green-600 hover:bg-green-500'
     },
     {
-      icon: MessageCircle,
-      label: 'whatsapp',
+      icon: null,
+      iconImage: '/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png',
+      label: 'WhatsApp',
       action: () => window.open('https://wa.me/923458299601', '_blank'),
       color: 'bg-emerald-600 hover:bg-emerald-500'
     },
@@ -40,7 +41,11 @@ const ContactActions = () => {
             onClick={action.action}
             className={`${action.color} text-white p-4 rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl flex flex-col items-center space-y-2`}
           >
-            <IconComponent size={24} />
+            {action.iconImage ? (
+              <img src={action.iconImage} alt={action.label} className="w-6 h-6" />
+            ) : (
+              <IconComponent size={24} />
+            )}
             <span className="text-xs font-medium capitalize">{action.label}</span>
           </button>
         );
