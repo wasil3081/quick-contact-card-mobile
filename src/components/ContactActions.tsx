@@ -9,7 +9,7 @@ const ContactActions = () => {
       iconImage: '/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png',
       label: 'WhatsApp',
       action: () => window.open('https://wa.me/923458299601', '_blank'),
-      color: 'bg-lime-600 hover:bg-lime-500'
+      color: 'bg-green-600 hover:bg-green-500'
     },
     {
       icon: Phone,
