@@ -5,32 +5,28 @@ import { generateVCard } from '../utils/vCardGenerator';
 const SaveContactButton = () => {
   const handleSaveContact = async () => {
     const vCardData = generateVCard();
-    const blob = new Blob([vCardData], { type: 'text/x-vcard' }); // More compatible MIME type
+    const blob = new Blob([vCardData], { type: 'text/x-vcard' });
     const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/x-vcard' });
-    //const file = new File([blob], 'test.txt', { type: 'text/plain' });
 
-    //const isAndroid = /Android/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
 
-    if (
-      //isAndroid &&
-      navigator.canShare &&
-      navigator.canShare({ files: [file] })
-    ) {
-      try {
-        await navigator.share({
-          title: 'Save Contact',
-          text: 'Add Wasil Anwar to your contacts.',
-          files: [file],
-        });
-        return;
-      } catch (err) {
-        console.error('navigator.share() failed:', err);
-      }
-    } else {
-      console.log('Web Share API not supported or file cannot be shared.');
+    if (isAndroid) {
+      // Construct a data URI with the vCard content
+      const encodedVCard = encodeURIComponent(vCardData);
+      const dataUri = `data:text/vcard;charset=utf-8,${encodedVCard}`;
+
+      // Open the data URI to trigger Android's add contact flow
+      const link = document.createElement('a');
+      link.href = dataUri;
+      link.download = 'Wasil_Anwar.vcf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      return;
     }
 
-    // Fallback for non-Android or unsupported cases
+    // Fallback: download the .vcf file
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
