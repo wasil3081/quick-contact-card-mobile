@@ -9,7 +9,7 @@ const ContactActions = () => {
       iconImage: '/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png',
       label: 'WhatsApp',
       action: () => window.open('https://wa.me/923458299601', '_blank'),
-      color: 'bg-emerald-600 hover:bg-emerald-500'
+      color: 'bg-lime-600 hover:bg-lime-500'
     },
     {
       icon: Phone,
@@ -21,7 +21,7 @@ const ContactActions = () => {
       icon: MessageCircle,
       label: 'message',
       action: () => window.open('sms:+923458299601', '_self'),
-      color: 'bg-emerald-400 hover:bg-emerald-300'
+      color: 'bg-emerald-600 hover:bg-emerald-500'
     },  
     {
       icon: Mail,
