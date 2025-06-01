@@ -5,8 +5,8 @@ import { generateVCard } from '../utils/vCardGenerator';
 const SaveContactButton = () => {
   const handleSaveContact = async () => {
     const vCardData = generateVCard();
-    const blob = new Blob([vCardData], { type: 'text/vcard' });
-    const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/vcard' });
+    const blob = new Blob([vCardData], { type: 'text/x-vcard' }); // More compatible MIME type
+    const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/x-vcard' });
 
     const isAndroid = /Android/i.test(navigator.userAgent);
 
@@ -23,11 +23,13 @@ const SaveContactButton = () => {
         });
         return;
       } catch (err) {
-        console.error('Sharing failed', err);
+        console.error('navigator.share() failed:', err);
       }
+    } else {
+      console.log('Web Share API not supported or file cannot be shared.');
     }
 
-    // Fallback for non-Android or unsupported browsers
+    // Fallback for non-Android or unsupported cases
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
