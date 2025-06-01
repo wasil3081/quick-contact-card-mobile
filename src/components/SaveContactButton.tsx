@@ -8,8 +8,10 @@ const SaveContactButton = () => {
     const blob = new Blob([vCardData], { type: 'text/vcard' });
     const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/vcard' });
 
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
     if (
-      navigator.share &&
+      isAndroid &&
       navigator.canShare &&
       navigator.canShare({ files: [file] })
     ) {
@@ -19,20 +21,21 @@ const SaveContactButton = () => {
           text: 'Add Wasil Anwar to your contacts.',
           files: [file],
         });
-      } catch (error) {
-        console.error('Sharing failed:', error);
+        return;
+      } catch (err) {
+        console.error('Sharing failed', err);
       }
-    } else {
-      // fallback for unsupported devices/browsers
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Wasil_Anwar.vcf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
     }
+
+    // Fallback for non-Android or unsupported browsers
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Wasil_Anwar.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   return (
