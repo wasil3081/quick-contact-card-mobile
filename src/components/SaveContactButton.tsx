@@ -1,20 +1,38 @@
-
 import React from 'react';
 import { Download } from 'lucide-react';
 import { generateVCard } from '../utils/vCardGenerator';
 
 const SaveContactButton = () => {
-  const handleSaveContact = () => {
+  const handleSaveContact = async () => {
     const vCardData = generateVCard();
     const blob = new Blob([vCardData], { type: 'text/vcard' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Wasil_Anwar.vcf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/vcard' });
+
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({ files: [file] })
+    ) {
+      try {
+        await navigator.share({
+          title: 'Save Contact',
+          text: 'Add Wasil Anwar to your contacts.',
+          files: [file],
+        });
+      } catch (error) {
+        console.error('Sharing failed:', error);
+      }
+    } else {
+      // fallback for unsupported devices/browsers
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Wasil_Anwar.vcf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    }
   };
 
   return (
