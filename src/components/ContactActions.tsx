@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageCircle, Phone, Video, Mail } from 'lucide-react';
+import { MessageCircle, Phone, Mail } from 'lucide-react';
 
 const ContactActions = () => {
   const actions = [
@@ -8,25 +8,25 @@ const ContactActions = () => {
       icon: MessageCircle,
       label: 'message',
       action: () => window.open('sms:+923458299601', '_self'),
-      color: 'bg-gray-700 hover:bg-gray-600'
+      color: 'bg-blue-600 hover:bg-blue-500'
     },
     {
       icon: Phone,
       label: 'call',
       action: () => window.open('tel:+923458299601', '_self'),
-      color: 'bg-gray-600 hover:bg-gray-500'
+      color: 'bg-green-600 hover:bg-green-500'
     },
     {
-      icon: Video,
-      label: 'video',
-      action: () => window.open('facetime:+923458299601', '_self'),
-      color: 'bg-gray-800 hover:bg-gray-700'
+      icon: MessageCircle,
+      label: 'whatsapp',
+      action: () => window.open('https://wa.me/923458299601', '_blank'),
+      color: 'bg-emerald-600 hover:bg-emerald-500'
     },
     {
       icon: Mail,
       label: 'mail',
       action: () => window.open('mailto:wasil1996@gmail.com', '_self'),
-      color: 'bg-gray-500 hover:bg-gray-400'
+      color: 'bg-red-600 hover:bg-red-500'
     }
   ];
 
@@ -38,7 +38,7 @@ const ContactActions = () => {
           <button
             key={index}
             onClick={action.action}
-            className={`${action.color} text-white p-4 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl flex flex-col items-center space-y-2`}
+            className={`${action.color} text-white p-4 rounded-md transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl flex flex-col items-center space-y-2`}
           >
             <IconComponent size={24} />
             <span className="text-xs font-medium capitalize">{action.label}</span>
