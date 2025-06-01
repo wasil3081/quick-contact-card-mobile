@@ -18,7 +18,7 @@ const SaveContactButton = () => {
       // Open the data URI to trigger Android's add contact flow
       const link = document.createElement('a');
       link.href = dataUri;
-      link.download = 'Wasil_Anwar.vcf';
+      //link.download = 'Wasil_Anwar.vcf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
