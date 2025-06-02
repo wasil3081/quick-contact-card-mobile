@@ -3,7 +3,7 @@ import React from 'react';
 
 const ContactSummary = () => {
   return (
-    <div className="bg-gray-800/90 backdrop-blur-lg rounded-xl p-6 border border-gray-700 shadow-xl">
+    <div className="bg-gray-800/90 backdrop-blur-lg rounded-lg p-6 border border-gray-700 shadow-xl">
       <h2 className="text-2xl font-bold text-white mb-4">About</h2>
       
       <div className="space-y-4 text-gray-300">
@@ -42,7 +42,7 @@ const ContactSummary = () => {
                 rel="noopener noreferrer"
                 className="ml-2 text-gray-300 hover:text-gray-100 underline"
               >
-                wasilanwar
+                https://www.linkedin.com/in/wasilanwar
               </a>
             </div>
           </div>
