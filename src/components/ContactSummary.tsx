@@ -28,11 +28,7 @@ const ContactSummary = () => {
             </div>
             <div>
               <span className="text-gray-400">Email:</span>
-              <span className="ml-2 text-gray-200">wasil1996@gmail.com</span>
-            </div>
-            <div>
-              <span className="text-gray-400">Work:</span>
-              <span className="ml-2 text-gray-200">wasil.anwar@din.global</span>
+              <span className="ml-2 text-gray-200">wasil@link.pk</span>
             </div>
           </div>
         </div>
