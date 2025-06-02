@@ -14,22 +14,24 @@ const ContactCard = () => {
         </div>
       </div>
       
-      <div className="flex items-center justify-center gap-3 mb-2">
-        <h1 className="text-3xl font-bold text-white">
-          Wasil Anwar
-        </h1>
-        <a 
-          href="https://www.linkedin.com/in/wasilanwar" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="hover:opacity-80 transition-opacity"
-        >
-          <img 
-            src="/lovable-uploads/5ab42a7b-e8c2-4729-8ed9-f11afd003bc3.png"
-            alt="LinkedIn"
-            className="w-8 h-8"
-          />
-        </a>
+      <div className="mb-2">
+        <div className="flex items-center justify-center gap-3">
+          <h1 className="text-3xl font-bold text-white">
+            Wasil Anwar
+          </h1>
+          <a 
+            href="https://www.linkedin.com/in/wasilanwar" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src="/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png"
+              alt="LinkedIn"
+              className="w-8 h-8"
+            />
+          </a>
+        </div>
       </div>
       
       <p className="text-gray-300 text-lg mb-1">
