@@ -27,7 +27,7 @@ const ContactCard = () => {
           <img 
             src="/lovable-uploads/5ab42a7b-e8c2-4729-8ed9-f11afd003bc3.png"
             alt="LinkedIn"
-            className="w-7 h-7"
+            className="w-8 h-8"
           />
         </a>
       </div>
