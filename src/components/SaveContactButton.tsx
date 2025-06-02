@@ -1,32 +1,30 @@
-
 import React from 'react';
 import { Download } from 'lucide-react';
 import { generateVCard } from '../utils/vCardGenerator';
 
 const SaveContactButton = () => {
-  const handleSaveContact = async () => {
+  const handleSaveContact = () => {
     const vCardData = generateVCard();
-    const blob = new Blob([vCardData], { type: 'text/x-vcard' });
-    const file = new File([blob], 'Wasil_Anwar.vcf', { type: 'text/x-vcard' });
-
     const isAndroid = /Android/i.test(navigator.userAgent);
 
     if (isAndroid) {
       // Construct a data URI with the vCard content
-      //const encodedVCard = encodeURIComponent(vCardData);
-      //const dataUri = `data:text/x-vcard;charset=utf-8,${encodedVCard}`;
-      const dataUri = encodeURIComponent(vCardData);
-      console.log("Data URI: ", dataUri);
+      const encodedVCard = encodeURIComponent(vCardData);
+      const dataUri = `data:text/vcard;charset=utf-8,${encodedVCard}`;
 
-      // Open the data URI to trigger Android's add contact flow
-      window.open(dataUri, '_blank');
+      // Create a link element and trigger a click
+      const link = document.createElement('a');
+      link.href = dataUri;
+      link.setAttribute('download', ''); // Prevents download attribute from triggering a download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       return;
     }
-    else {
-      console.log("Not an Android device. Falling back to VCF download");
-    }
-    
+
     // Fallback: download the .vcf file
+    const blob = new Blob([vCardData], { type: 'text/x-vcard' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
