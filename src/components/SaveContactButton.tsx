@@ -12,14 +12,7 @@ const SaveContactButton = () => {
       const encodedVCard = encodeURIComponent(vCardData);
       const dataUri = `${encodedVCard}`;
 
-      // Create a link element and trigger a click
-      const link = document.createElement('a');
-      link.href = dataUri;
-      link.setAttribute('download', ''); // Prevents download attribute from triggering a download
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
+      window.open(dataUri, '_blank');
       return;
     }
 
