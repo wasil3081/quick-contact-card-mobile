@@ -36,7 +36,7 @@ const SaveContactButton = () => {
         <span>{isIOS ? 'Save Contact' : 'Download Contact'}</span>
       </button>
       {showTooltip && !isIOS && (
-        <p className="text-sm text-gray-300">Open the downloaded ".vcf" file to save it to your Contacts.</p>
+        <p className="text-sm text-gray-300 text-center">Open the downloaded ".vcf" file to save it to your Contacts.</p>
       )}
     </div>
   );
