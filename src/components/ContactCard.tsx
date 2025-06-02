@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Linkedin } from 'lucide-react';
 
 const ContactCard = () => {
   return (
@@ -23,9 +22,13 @@ const ContactCard = () => {
           href="https://www.linkedin.com/in/wasilanwar" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-300 transition-colors"
+          className="hover:opacity-80 transition-opacity"
         >
-          <Linkedin size={28} />
+          <img 
+            src="/lovable-uploads/fe4488e5-da78-4084-977d-dfb23a4f8b1f.png"
+            alt="LinkedIn"
+            className="w-7 h-7"
+          />
         </a>
       </div>
       
