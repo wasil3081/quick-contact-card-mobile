@@ -34,17 +34,6 @@ const ContactSummary = () => {
               <span className="text-gray-400">Work:</span>
               <span className="ml-2 text-gray-200">wasil.anwar@din.global</span>
             </div>
-            <div>
-              <span className="text-gray-400">LinkedIn:</span>
-              <a 
-                href="https://www.linkedin.com/in/wasilanwar" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="ml-2 text-gray-300 hover:text-gray-100 underline"
-              >
-                wasilanwar
-              </a>
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Linkedin } from 'lucide-react';
 
 const ContactCard = () => {
   return (
@@ -14,9 +15,19 @@ const ContactCard = () => {
         </div>
       </div>
       
-      <h1 className="text-3xl font-bold text-white mb-2">
-        Wasil Anwar
-      </h1>
+      <div className="flex items-center justify-center gap-3 mb-2">
+        <h1 className="text-3xl font-bold text-white">
+          Wasil Anwar
+        </h1>
+        <a 
+          href="https://www.linkedin.com/in/wasilanwar" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300 transition-colors"
+        >
+          <Linkedin size={28} />
+        </a>
+      </div>
       
       <p className="text-gray-300 text-lg mb-1">
         Product Consultant | Program Manager
