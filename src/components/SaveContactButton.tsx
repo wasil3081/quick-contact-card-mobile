@@ -9,11 +9,16 @@ const SaveContactButton = () => {
 
     if (isAndroid) {
       // Construct a data URI with the vCard content
-      const encodedVCard = encodeURIComponent(vCardData);
-      const dataUri = `${encodedVCard}`;
+      //const encodedVCard = encodeURIComponent(vCardData);
+      const dataUri = "intent://vnd.android.cursor.dir/raw_contact/#Intent;action=android.intent.action.INSERT;S.email=hello@world.com;S.phone=+1-212-555-1234end;";
 
-      window.open(dataUri, '_blank');
-      return;
+      // Create a link element and trigger a click
+      const link = document.createElement('a');
+      link.href = dataUri;
+      link.setAttribute('download', ''); // Prevents download attribute from triggering a download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
 
     // Fallback: download the .vcf file
