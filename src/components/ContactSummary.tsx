@@ -42,7 +42,7 @@ const ContactSummary = () => {
                 rel="noopener noreferrer"
                 className="ml-2 text-gray-300 hover:text-gray-100 underline"
               >
-                https://www.linkedin.com/in/wasilanwar
+                wasilanwar
               </a>
             </div>
           </div>
