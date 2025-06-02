@@ -19,6 +19,7 @@ const SaveContactButton = () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      return;
     }
 
     // Fallback: download the .vcf file
