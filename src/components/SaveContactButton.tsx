@@ -3,29 +3,16 @@ import { Download } from 'lucide-react';
 import { generateVCard } from '../utils/vCardGenerator';
 
 const SaveContactButton = () => {
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    return null; // Hide the button on Android devices
+  }
+
   const handleSaveContact = () => {
     const vCardData = generateVCard();
-    const isAndroid = /Android/i.test(navigator.userAgent);
 
-    if (isAndroid) {
-      // Construct a data URI with the vCard content
-      //const encodedVCard = encodeURIComponent(vCardData);
-      const intentUri = 'intent://vnd.android.cursor.dir/raw_contact/#Intent;action=android.intent.action.INSERT;S.email=hello@world.com;S.phone=+1-212-555-1234end;';
-
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = intentUri;
-      document.body.appendChild(iframe);
-
-      // Clean up iframe after a short delay
-      setTimeout(() => {
-        document.body.removeChild(iframe);
-      }, 1000);
-
-      return;
-    }
-
-    // Fallback: download the .vcf file
+    // Directly download the .vcf file
     const blob = new Blob([vCardData], { type: 'text/x-vcard' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
