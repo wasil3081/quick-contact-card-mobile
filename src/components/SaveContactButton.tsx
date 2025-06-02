@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Download } from 'lucide-react';
 import { generateVCard } from '../utils/vCardGenerator';
 
 const SaveContactButton = () => {
+  const [showTooltip, setShowTooltip] = useState(false);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   const handleSaveContact = () => {
@@ -18,6 +19,11 @@ const SaveContactButton = () => {
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
+
+    // Show tooltip after click (on non-iOS)
+    if (!isIOS) {
+      setShowTooltip(true);
+    }
   };
 
   return (
@@ -29,7 +35,7 @@ const SaveContactButton = () => {
         <Download size={24} />
         <span>{isIOS ? 'Save Contact' : 'Download Contact'}</span>
       </button>
-      {!isIOS && (
+      {showTooltip && !isIOS && (
         <p className="text-sm text-gray-300">Open the downloaded ".vcf" file to save it to your Contacts.</p>
       )}
     </div>
