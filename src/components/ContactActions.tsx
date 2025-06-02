@@ -26,7 +26,7 @@ const ContactActions = () => {
     {
       icon: Mail,
       label: 'mail',
-      action: () => window.open('mailto:wasil1996@gmail.com', '_self'),
+      action: () => window.open('mailto:wasil@link.pk', '_self'),
       color: 'bg-slate-600 hover:bg-slate-500'
     }
   ];
