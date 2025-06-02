@@ -15,7 +15,7 @@ const ContactCard = () => {
       </div>
       
       <div className="mb-2">
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-3 w-fit mx-auto">
           <h1 className="text-3xl font-bold text-white">
             Wasil Anwar
           </h1>
