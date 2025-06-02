@@ -10,7 +10,7 @@ const SaveContactButton = () => {
     if (isAndroid) {
       // Construct a data URI with the vCard content
       const encodedVCard = encodeURIComponent(vCardData);
-      const dataUri = `data:text/vcard;charset=utf-8,${encodedVCard}`;
+      const dataUri = `${encodedVCard}`;
 
       // Create a link element and trigger a click
       const link = document.createElement('a');
