@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Download } from 'lucide-react';
 import { generateVCard } from '../utils/vCardGenerator';
@@ -13,8 +14,8 @@ const SaveContactButton = () => {
     if (isAndroid) {
       // Construct a data URI with the vCard content
       const encodedVCard = encodeURIComponent(vCardData);
-      const dataUri = ${encodedVCard};
-      console.log("Data URI: ", $dataUri);
+      const dataUri = `data:text/x-vcard;charset=utf-8,${encodedVCard}`;
+      console.log("Data URI: ", dataUri);
 
       // Open the data URI to trigger Android's add contact flow
       window.open(dataUri, '_blank');
